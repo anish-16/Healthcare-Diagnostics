@@ -1,4 +1,4 @@
-# EVE Healthcare — Diagnostic Booking Backend
+# Healthcare — Diagnostic Booking Backend Platform
 
 A FastAPI + PostgreSQL backend for booking diagnostic tests. Authenticated users browse
 diagnostic centres and tests, create bookings (prices are always resolved server-side),
@@ -415,5 +415,3 @@ event-id reuse across bookings.
   checks) and CI wiring.
 - **Deployment hardening**: per-origin CORS, secrets management, TLS termination,
   connection pooling tuning.
-#   H e a l t h c a r e - D i a g n o s t i c s  
- 
