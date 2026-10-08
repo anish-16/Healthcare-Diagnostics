@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import RedirectResponse
 
 from app.core.config import settings
 from app.routers import auth, bookings, centres, payments, tests
@@ -28,6 +29,12 @@ app.include_router(centres.router)
 app.include_router(tests.router)
 app.include_router(bookings.router)
 app.include_router(payments.router)
+
+
+@app.get("/", include_in_schema=False)
+def root() -> RedirectResponse:
+    """Redirect the root path to the Swagger docs."""
+    return RedirectResponse(url="/docs")
 
 
 @app.get("/health", tags=["Health"], summary="Liveness probe")
